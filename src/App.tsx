@@ -20,7 +20,7 @@ function App() {
   const [searchResult, setSearchResult] = useState<any>(null);
   const [loading, setLoading] = useState(false);
 
-  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday','Saturday'];
   const periods = Array.from({ length: 8 }, (_, i) => i + 1);
 
   useEffect(() => {
