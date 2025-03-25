@@ -57,8 +57,7 @@ function App() {
           `)
           .eq('staff_id', selectedStaff)
           .eq('day', selectedDay)
-          .eq('period', selectedPeriod)
-          .single();
+          .eq('period', selectedPeriod);
         
         setSearchResult(data || { message: 'Free Period' });
       } else {
@@ -197,17 +196,22 @@ function App() {
                   <p className="text-gray-600">{searchResult.message}</p>
                 ) : (
                   <div className="space-y-2">
-                    <p className="text-gray-600">
-                      <span className="font-medium">Staff:</span> {searchResult.staff?.name}
-                    </p>
-                    <p className="text-gray-600">
-                      <span className="font-medium">Subject:</span> {searchResult.subject?.name}
-                    </p>
-                    <p className="text-gray-600">
-                      <span className="font-medium">Department:</span> {searchResult.department?.name}
-                    </p>
+                    {searchResult.map((entry: any, index: number) => (
+                      <div key={index}>
+                        <p className="text-gray-600">
+                          <span className="font-medium">Staff:</span> {entry.staff?.name}
+                        </p>
+                        <p className="text-gray-600">
+                          <span className="font-medium">Subject:</span> {entry.subject?.name}
+                        </p>
+                        <p className="text-gray-600">
+                          <span className="font-medium">Department:</span> {entry.department?.name}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 )}
+
               </div>
             )}
           </div>
@@ -216,5 +220,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
