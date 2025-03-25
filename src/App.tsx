@@ -76,8 +76,7 @@ function App() {
           `)
           .eq('department_id', selectedDepartment)
           .eq('day', selectedDay)
-          .eq('period', selectedPeriod)
-          .single();
+          .eq('period', selectedPeriod);
         
         setSearchResult(data || { message: 'No Class Assigned' });
       }
