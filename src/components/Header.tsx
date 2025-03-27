@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../logo-white.png'; // Importing the logo
+import logo from '../../logo-white.png'; // Importing the logo
 
 const Header: React.FC = () => {
   return (
